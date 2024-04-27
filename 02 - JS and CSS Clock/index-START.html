@@ -136,8 +136,14 @@
         min.style.transform = `rotate(${minDegrees}deg)`;
         hour.style.transform = `rotate(${hourDegrees}deg)`;
       }
-      setClock();
-      setInterval(setClock, 1000);
+      // setClock();
+      // setInterval(setClock, 1000);//法1
+
+      function timeheadler(){
+        setClock();
+        setTimeout(timeheadler,1000);
+      }
+      setTimeout(timeheadler,1000);//法2
     })()
 
 
